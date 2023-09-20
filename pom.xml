@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.hgy</groupId>
+    <artifactId>lottery-hgy-2</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>lottery-hgy-2</name>
+    <description>lottery-hgy-2</description>
+    <packaging>pom</packaging>
+
+    <!--引入子模块-->
+    <modules>
+        <module>lottery-application</module>
+        <module>lottery-common</module>
+        <module>lottery-domain</module>
+        <module>lottery-infrastructure</module>
+        <module>lottery-interfaces</module>
+        <module>lottery-rpc</module>
+    </modules>
+
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
+    <!--管理依赖版本-->
+    <dependencyManagement>
+        <dependencies>
+            <!-- 1.33版本及以下有漏洞，所以使用最新版本-->
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>2.2</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
+
+</project>

@@ -1,0 +1,27 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    username: root
+    password: hgy7777777
+    url: jdbc:mysql://127.0.0.1:3306/lottery1
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true  # \u5B9E\u4F53\u7C7B\u4E2D\u5C5E\u6027\u540D\u53EF\u4EE5\u4F7F\u7528\u9A7C\u5CF0\u547D\u540D
+
+dubbo:
+  application:
+    name: lottery-hgy
+  registry:
+    address: nacos://127.0.0.1:8848
+  protocol:
+    name: dubbo
+    port: 20880
+  scan:
+    base-packages: com.hgy.lottery.rpc
+
+
